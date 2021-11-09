@@ -1,6 +1,9 @@
 import "./MovieCard.css";
-import Rate from '../Rate'
-const MovieCard = ({movie:{image, name, date, rating, type, description}}) => {
+import Rate from "../Rate";
+import { Link } from "react-router-dom";
+const MovieCard = ({
+  movie: { id, image, name, date, rating, type, description }
+}) => {
   return (
     <div className="card">
       <div className="card_left">
@@ -23,7 +26,7 @@ const MovieCard = ({movie:{image, name, date, rating, type, description}}) => {
           <a href="https://www.imdb.com/?ref_=nv_home">Read More</a>
         </div>
         <div className="card_right__button">
-          <a href="#!">WATCH TRAILER</a>
+          <Link to={`/movies/${id}`}>WATCH TRAILER</Link>
         </div>
       </div>
     </div>
